@@ -2,13 +2,11 @@
 import { Header } from "@/components/Header/Header";
 import { Layout } from "@/components/Layout/Layout";
 import UserContext from "@/context/UserContext";
-import { useVerifyLogin } from "@/helpers/useVerifyLogin";
 import { jwtDecode } from "jwt-decode";
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Profile() {
-    useVerifyLogin();
     const navigate = useNavigate();
   
     const { userName, setUserName } = useContext(UserContext);

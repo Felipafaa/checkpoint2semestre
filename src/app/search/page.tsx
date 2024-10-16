@@ -4,12 +4,10 @@ import { Header } from "@/components/Header/Header";
 import { Input } from "@/components/Input/Input";
 import { Layout } from "@/components/Layout/Layout";
 import UserContext from "@/context/UserContext";
-import { useVerifyLogin } from "@/helpers/useVerifyLogin";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Search() {
-    useVerifyLogin();
     const navigate = useNavigate();
     const { userName } = useContext(UserContext);
     const [cityName, setCityName] = useState<string>("");
