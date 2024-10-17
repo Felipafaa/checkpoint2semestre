@@ -1,12 +1,11 @@
-'use client'
+"use client"
+
 import { Header } from "@/components/Header/Header";
 import { Layout } from "@/components/Layout/Layout";
 import UserContext from "@/context/UserContext";
 import { useContext, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 
 export default function Home() {
-  const location = useLocation();
   const { userName } = useContext(UserContext);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [cityData, setCityData] = useState(null);

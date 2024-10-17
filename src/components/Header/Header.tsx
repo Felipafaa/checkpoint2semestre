@@ -1,11 +1,13 @@
+"use client"
+
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import {
   StyledHeader,
   StyledUserData,
   StyledUserDataButton,
 } from "./Header.style";
+import { useRouter } from "next/navigation";
 
 interface HeaderProps {
   title: string;
@@ -13,17 +15,18 @@ interface HeaderProps {
 }
 
 export const Header = ({ title, userName }: HeaderProps) => {
-  const navigate = useNavigate();
-  const { setUserName } = useContext(UserContext);
+  const router=useRouter
+
+  const context = useContext(UserContext);
 
   const handleLogin = () => {
-    navigate("/login");
+    router.push("/login");
   };
 
   const handleLogout = () => {
     sessionStorage.removeItem("userToken");
-    setUserName(null);
-    navigate("/login");
+    setUserName("");
+    router.push("/login");
   };
 
   return (

@@ -1,3 +1,6 @@
+"use client"
+
+
 import { StyledInput, StyledLabel } from "./Input.stye";
 
 interface InputProps {

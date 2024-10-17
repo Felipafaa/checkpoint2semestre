@@ -1,3 +1,5 @@
+"use client"
+
 import { Menu } from "../Menu/Menu";
 import { StyledLayout } from "./Layout.style";
 
